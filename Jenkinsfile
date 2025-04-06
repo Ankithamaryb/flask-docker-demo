@@ -1,11 +1,13 @@
 pipeline {
     agent any
 
-    stage('Checkout Code') {
-    steps {
-        git branch: 'main', url: 'https://github.com/Ankithamaryb/flask-docker-demo.git'
-    }
-}
+    stages {  // 
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Ankithamaryb/flask-docker-demo.git'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
@@ -25,5 +27,6 @@ pipeline {
                 '''
             }
         }
-    }
+
+    } // 
 }
